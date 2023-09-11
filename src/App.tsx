@@ -1,19 +1,13 @@
-import { useEffect, useRef } from "react"
-import { fetchProducts } from "./store/products-slice"
-import { useAppDispatch } from "./store/store"
+import { Header } from "./components/features/header/header"
+import { Products } from "./components/features/products-gallery/products"
 
 function App() {
-  const dispatch = useAppDispatch()
-  const abortRef = useRef<AbortController>()
-
-  useEffect(() => {
-    abortRef.current = new AbortController()
-    dispatch(fetchProducts({ signal: abortRef.current.signal }))
-
-    return () => abortRef.current?.abort()
-  }, [dispatch])
-
-  return <></>
+  return (
+    <>
+      <Header />
+      <Products />
+    </>
+  )
 }
 
 export default App

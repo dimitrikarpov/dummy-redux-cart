@@ -44,5 +44,6 @@ const productSlice = createSlice({
 
 export default productSlice.reducer
 
+export const selectProducts = (state: RootState) => state.products.list
 export const selectFetchProductLoading = (state: RootState) =>
   state.products.loading
