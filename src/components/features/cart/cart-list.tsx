@@ -11,7 +11,9 @@ export const CartList = () => {
   }
 
   return (
-    <div>
+    <div className="py-8">
+      <h3 className="text-lg mb-4">Stock prices</h3>
+
       {list.map((item) => (
         <div className="flex flex-row justify-between mb-4" key={item.id}>
           <div>{item.title}</div>

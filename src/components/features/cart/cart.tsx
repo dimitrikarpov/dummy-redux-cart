@@ -1,15 +1,13 @@
 import {
   Sheet,
-  SheetClose,
   SheetContent,
-  SheetDescription,
-  SheetFooter,
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet"
 import { selectIsOpened, onOpenChange } from "@/store/cart-slice"
 import { useAppDispatch, useAppSelector } from "@/store/store"
 import { CartList } from "./cart-list"
+import { Discount } from "./discount"
 
 export const Cart = () => {
   const dispatch = useAppDispatch()
@@ -24,10 +22,9 @@ export const Cart = () => {
       <SheetContent>
         <SheetHeader>
           <SheetTitle>Cart</SheetTitle>
-          <SheetDescription>All Your products are here</SheetDescription>
         </SheetHeader>
-        <div className="mb-8"></div>
         <CartList />
+        <Discount />
       </SheetContent>
     </Sheet>
   )

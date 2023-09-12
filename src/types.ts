@@ -11,3 +11,8 @@ export type Product = {
   thumbnail: string
   images: string[]
 }
+
+export type ProductDiscountedInfo = Pick<
+  Product,
+  "id" | "price" | "discountPercentage" | "title"
+> & { discount: number }
