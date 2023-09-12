@@ -31,13 +31,23 @@ const cartSlice = createSlice({
     addProduct: (state, action: PayloadAction<Product>) => {
       state.list.push(action.payload)
     },
+    removeProduct: (state, action: PayloadAction<number>) => {
+      state.list = state.list.filter(({ id }) => id !== action.payload)
+    },
   },
 })
 
 export default cartSlice.reducer
 
-export const { toggleCart, onOpenChange, openCart, closeCart, addProduct } =
-  cartSlice.actions
+export const {
+  toggleCart,
+  onOpenChange,
+  openCart,
+  closeCart,
+  addProduct,
+  removeProduct,
+} = cartSlice.actions
 
 export const selectIsOpened = (state: RootState) => state.cart.isOpened
 export const selectCartItemsCount = (state: RootState) => state.cart.list.length
+export const selectCartList = (state: RootState) => state.cart.list

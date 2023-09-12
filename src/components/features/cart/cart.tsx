@@ -9,10 +9,11 @@ import {
 } from "@/components/ui/sheet"
 import { selectIsOpened, onOpenChange } from "@/store/cart-slice"
 import { useAppDispatch, useAppSelector } from "@/store/store"
+import { CartList } from "./cart-list"
 
 export const Cart = () => {
-  const open = useAppSelector(selectIsOpened)
   const dispatch = useAppDispatch()
+  const open = useAppSelector(selectIsOpened)
 
   const openChange = (open: boolean) => {
     dispatch(onOpenChange(open))
@@ -25,7 +26,8 @@ export const Cart = () => {
           <SheetTitle>Cart</SheetTitle>
           <SheetDescription>All Your products are here</SheetDescription>
         </SheetHeader>
-        <h2>adfasdfasdfa;ljk;lakjsdf</h2>
+        <div className="mb-8"></div>
+        <CartList />
       </SheetContent>
     </Sheet>
   )
