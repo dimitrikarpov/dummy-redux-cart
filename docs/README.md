@@ -2,6 +2,8 @@
 
 Just a little project to practice with `redux toolkit`. Adding products to cart with simple `reducers` and calculating discount with `extraReducers`.
 
+<p align="center"><a href="https://dimitrikarpov.github.io/dummy-redux-cart/">Online Demo</a></p>
+
 Libraries:
 
 - react
